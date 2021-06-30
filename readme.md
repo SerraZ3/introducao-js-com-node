@@ -387,6 +387,25 @@ console.log(buscarAluno);
 console.log(buscarAlunoPosicao);
 ```
 
+### Desafios
+
+- Crie um array com um valor:
+  - inteiro (number)
+  - float (number)
+  - boolean
+  - string
+  - array
+  - objeto
+- Crie um objeto para um produto. Nele deve possuir:
+  - id (inteiro)
+  - nome (inteiro)
+  - preço (float)
+  - descrição (string)
+  - quantidade (inteiro)
+- Crie um array com os produtos de uma loja. Esse array deve possui 5 produtos com a estrutura acima
+- Busque no array acima o produto com id 3 e imprima no terminal o nome e o preço dele
+- Encontre a posição do array acima
+- Mapeie todos os produtos da loja e imprima a seguinte frase para cada um deles: `O "nome do produto" custa "preço do produto" e temos nos estoque o total de "quantidade em estoque". Descrição: "Descrição do produto"`
 
 ## Condicionais
 
@@ -508,6 +527,12 @@ switch (aluno) {
     break;
 }
 ```
+
+### Desafio
+
+- Crie uma variável chamada hora onde ela receberá o valor da hora atual (inteiro) e diga se ela está no período da manha (24h a 11h), tarde (12h a 17h) ou noite (18h a 23h)
+- Crie uma variável chamada professor e atribua o nome "Josué" a ele. Verifique se essa string possui tamanho maior ou igual a 4
+- Altere o exercicio a cima para o nome de "Ricardinho" e verifique se ele possui valor menos ou igual a 10
 
 ## Funções
 
@@ -641,3 +666,10 @@ const prof = new Professor();
 console.log(Professor.nome);
 console.log(prof.nome);
 ```
+
+### Desafio 
+
+- Crie uma função que subtraia 2 de um número
+- Crie um objeto chamado "calculadora" e crie funções nele para soma, subtração, multiplicação e divisão de dois numeros (a e b, por exemplo)
+- Crie uma função que multiplica dois números (a e b) e retorne o resultado. Crie outra função que retorne o quadrado (x²) de um número. OBS: Use a função que multiplica dois números na função que gera o quadrado de um número
+- Crie uma função que receba o nome e sobrenome de uma pessoa e retorne a seguinte frase: `Ola "nome da pessoa" "sobrenome da pessoa", seja bem-vindo!`
