@@ -386,3 +386,136 @@ const buscarAlunoPosicao = alunos.findIndex(value=>value.nome==="Luana")
 console.log(buscarAluno);
 console.log(buscarAlunoPosicao);
 ```
+
+## Funções
+
+Função é um trecho de código que pode ser chamado diversas vezes e retorna valores ou não. Esse trecho de código pode receber parametros que alteram seu valor retornado.
+
+```js
+// função que retorna parametro somado com 2 
+function soma2(num) {
+  return num + 2;
+}
+
+// Imprime valor retornado
+console.log(soma2(2));
+console.log(soma2(5));
+console.log(soma2(10));
+
+// Atribui valor retornado a variável
+const somado = soma2(20);
+console.log(somado);
+```
+```js
+// Uma função pode receber quantos parametros voce imaginar
+// função que retorna parametros multiplicados
+function multiplicar(a, b /*, params...*/) {
+  return a * b;
+}
+
+// Imprime valor retornado
+console.log(multiplicar(2, 10));
+
+// Atribui valor retornado a variável
+const multiplicado = multiplicar(10, 10);
+console.log(multiplicado);
+```
+
+```js
+// Escopo de uma função
+var mensagem = "Hello!"
+// função que retorna parametros multiplicados
+function multiplicar(a, b /*, params...*/) {
+  let resultado = a * b;
+  console.log(mensagem);
+  console.log(resultado);
+  return resultado;
+}
+
+console.log(mensagem);
+console.log(resultado); // Erro: resultado is not defined
+
+// Imprime valor retornado
+console.log(multiplicar(2, 10));
+```
+
+```js
+// Outras formas de escrever função
+// Padrão
+function somar1(a, b) {
+  return a + b;
+}
+
+// Função anônima
+const somar2 = function (a, b) {
+  return a + b;
+};
+
+// Arrow function
+const somar3 = (a, b) => {
+  return a + b;
+};
+
+// Outra forma de escrever Arrow function
+const somar4 = (a, b) => a + b;
+
+// Outra forma de escrever Arrow function
+// Caso a arrow function possua apenas 1 parametro é possivel omitir os parentes
+const multiplica2 = num => num * 2;
+
+console.log(somar1(1,2));
+console.log(somar2(1,2));
+console.log(somar3(1,2));
+console.log(somar4(1,2));
+console.log(multiplica2(2));
+```
+
+```js
+// Diferença entre function e arrow function
+// No arrow function não é possivel acessar os argumentos da função
+const calculadora1 = {
+  somar(a, b) {
+    console.log(arguments);
+  },
+};
+
+calculadora1.somar(1, 2, 3);
+
+const calculadora2 = {
+  somar: (a, b) => {
+    console.log(arguments);
+  },
+};
+
+calculadora2.somar(1, 2, 3);
+
+// No arrow function não é possivel acessar o this
+let aluno1 = {
+  nome: "Raul Seixas",
+  seuNomeEh() {
+    console.log(this.nome);
+  },
+};
+aluno1.seuNomeEh();
+
+let aluno2 = {
+  nome: "Roberto Carlos",
+  seuNomeEh: () => {
+    console.log(this.nome);
+  },
+};
+aluno2.seuNomeEh();
+
+// No arrow function não é possivel usar o operador new
+function Professor() {
+  this.nome = "Marcelo";
+  this.nivel = "Expert";
+
+  this.dizOi = function () {
+    console.log("Oi galera!");
+  };
+}
+const prof = new Professor();
+console.log(Professor.nome);
+console.log(prof.nome);
+```
