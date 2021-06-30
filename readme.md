@@ -387,6 +387,115 @@ console.log(buscarAluno);
 console.log(buscarAlunoPosicao);
 ```
 
+
+## Condicionais
+
+```js
+let nome = "Ana";
+
+if (nome === "Ana") {
+  console.log("Nome coincide");
+}
+if (nome === "Luiz") {
+  console.log("Nome não coincide");
+}
+
+if (nome === "Ana") {
+  console.log("Nome coincide");
+} else {
+  console.log("Nome não coincide");
+}
+
+if (nome === "Ana") {
+  console.log("Nome igual a Ana");
+} else if (nome === "Luiz") {
+  console.log("Nome igual a Luiz");
+} else {
+  console.log("Nome não bateu com nenhum");
+}
+```
+
+```js
+let idade = 21;
+
+// Idade menor que 30
+if (idade < 30) {
+  console.log("A idade é menor que 30");
+}
+// Idade menor ou igual a 30
+if (idade <= 30) {
+  console.log("A idade é menor ou igual a 30");
+}
+// Idade maior que 30
+if (idade > 30) {
+  console.log("A idade é maior que 30");
+}
+// Idade maior ou igual a 30
+if (idade >= 30) {
+  console.log("A idade é maior igual a 30");
+}
+// Diferente de idade maior que 30
+if (!(idade > 30)) {
+  console.log("A idade é maior que 30");
+}
+// Igual dade com 3 =
+if (idade === 21) {
+  console.log("A idade é igual a 21");
+}
+// Igual dade com 2 =
+if (idade == 21) {
+  console.log("A idade é igual a 21");
+}
+// Igual dade com 2 =
+if (idade == "21") {
+  console.log("A idade é igual a '21'");
+}
+if (idade === "21") {
+  console.log("A idade é igual a '21'");
+} else {
+  console.log("A idade não é igual a '21' por conta do seu tipo de dado");
+}
+if (idade !== 22) {
+  console.log("A idade é diferente a 22");
+}
+if (idade != 22) {
+  console.log("A idade é diferente a 22");
+}
+if (idade != 21) {
+  console.log("A idade é diferente a 21");
+} else {
+  console.log("A idade é igual a 21");
+}
+if (idade != "21") {
+  console.log("A idade é diferente a '21'");
+} else {
+  console.log("A idade é igual a '21'");
+}
+if (idade !== "21") {
+  console.log("A idade é diferente a '21'");
+} else {
+  console.log("A idade é igual a '21'");
+}
+if (idade !== 21) {
+  console.log("A idade é diferente a 21");
+} else {
+  console.log("A idade é igual a 21");
+}
+
+if (idade > 18 && idade < 60) {
+  console.log("Essa pessoa é adulta");
+} else if (idade > 0 && idade < 18) {
+  console.log("Essa pessoa é menor de idade");
+} else if (idade > 60) {
+  console.log("Essa pessoa é idosa");
+} else {
+  console.log("Idade inválida");
+}
+
+idade === 21 ? console.log("Igual a  21") : console.log("Diferente de 21");
+
+```
+
 ## Funções
 
 Função é um trecho de código que pode ser chamado diversas vezes e retorna valores ou não. Esse trecho de código pode receber parametros que alteram seu valor retornado.
