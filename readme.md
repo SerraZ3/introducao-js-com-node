@@ -494,6 +494,19 @@ if (idade > 18 && idade < 60) {
 
 idade === 21 ? console.log("Igual a  21") : console.log("Diferente de 21");
 
+let aluno = "Phineas";
+
+switch (aluno) {
+  case "Ferb":
+    console.log("É o Ferb");
+    break;
+  case "Phineas":
+    console.log("É o Phineas");
+    break;
+  default:
+    console.log("Ops, não é nenhum desses");
+    break;
+}
 ```
 
 ## Funções
