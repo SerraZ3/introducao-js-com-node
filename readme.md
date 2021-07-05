@@ -285,9 +285,6 @@ console.log(posicao);
 posicao = alunos.indexOf("Luan");
 console.log(posicao);
 
-posicao = alunos.indexOf("Roberto", 5);
-console.log(posicao);
-
 // Busca por um valor no array mas começa do final pro inicio
 // Retorna a posição do elemento ou -1
 let posicao2 = alunos.lastIndexOf("Roberto");
@@ -302,6 +299,8 @@ let ehIncluso = alunos.includes("Maria");
 console.log(alunos);
 console.log(ehIncluso);
 
+// ============================
+// PLUS
 alunos.map((value, index, array) => {
   console.log(`Posição ${index}: aluno ${value}`);
   // console.log(array);
@@ -331,7 +330,7 @@ var filtrarPorM = alunos.filter((value) => {
 console.log(filtrarPorM);
 ```
 
-### Object
+### Object (Objetos literais)
 
 ```js
 var aluno = {
@@ -356,6 +355,21 @@ console.log(aluno);
 ```
 
 ```js
+var aluno = {
+  nome: "Roger",
+  sobrenome: "Souza",
+  idade: 29,
+  apresentacao: function () {
+    return `Oi, sou o ${this.nome} ${this.sobrenome}, tenho ${this.idade} anos`;
+  },
+};
+
+console.log(aluno);
+console.log(aluno.apresentacao());
+```
+
+```js
+// Plus
 var alunos = [
   {
     nome: "Luiz",
@@ -387,6 +401,25 @@ console.log(buscarAluno);
 console.log(buscarAlunoPosicao);
 ```
 
+Além dos objetos literais existe os objetos JSON que servem para comunicação web
+
+```js
+var objetoLiteral = {
+  id: 1,
+  nome: "Joaquin",
+  idade: 18,
+};
+
+var objetoJson = `{"id":1,"nome":"Joaquin","idade":18}`;
+
+var converteJsonParaObjetoLiteral = JSON.parse(objetoJson);
+var converteObjetoLiteralParaJson = JSON.stringify(objetoLiteral);
+console.log(objetoLiteral);
+console.log(objetoJson);
+console.log(converteJsonParaObjetoLiteral);
+console.log(converteObjetoLiteralParaJson);
+```
+
 ### Desafios
 
 - Crie um array com um valor:
@@ -403,9 +436,12 @@ console.log(buscarAlunoPosicao);
   - descrição (string)
   - quantidade (inteiro)
 - Crie um array com os produtos de uma loja. Esse array deve possui 5 produtos com a estrutura acima
-- Busque no array acima o produto com id 3 e imprima no terminal o nome e o preço dele
+- Insira um valor no final do array acima
+- Insira um valor no inicio do array acima
+- Remova o primeiro valor e o último
+<!-- - (PLUS) Busque no array acima o produto com id 3 e imprima no terminal o nome e o preço dele
 - Encontre a posição do array acima
-- Mapeie todos os produtos da loja e imprima a seguinte frase para cada um deles: `O "nome do produto" custa "preço do produto" e temos nos estoque o total de "quantidade em estoque". Descrição: "Descrição do produto"`
+- Mapeie todos os produtos da loja e imprima a seguinte frase para cada um deles: `O "nome do produto" custa "preço do produto" e temos nos estoque o total de "quantidade em estoque". Descrição: "Descrição do produto"` -->
 
 ## Condicionais
 
@@ -530,8 +566,8 @@ switch (aluno) {
 
 ### Desafio
 
-- Crie uma variável chamada hora onde ela receberá o valor da hora atual (inteiro) e diga se ela está no período da manha (24h a 11h), tarde (12h a 17h) ou noite (18h a 23h)
-- Crie uma variável chamada professor e atribua o nome "Josué" a ele. Verifique se essa string possui tamanho maior ou igual a 4
+- Crie uma variável chamada hora onde ela receberá o valor da hora atual (inteiro) e diga se ela está no período da manha (0h a 11h), tarde (12h a 17h) ou noite (18h a 23h)
+- Crie uma variável chamada professor e atribua o nome "Josué" a ele. Verifique se essa string possui tamanho maior ou igual a 4.
 - Altere o exercicio a cima para o nome de "Ricardinho" e verifique se ele possui valor menos ou igual a 10
 
 ## Funções
@@ -673,3 +709,37 @@ console.log(prof.nome);
 - Crie um objeto chamado "calculadora" e crie funções nele para soma, subtração, multiplicação e divisão de dois numeros (a e b, por exemplo)
 - Crie uma função que multiplica dois números (a e b) e retorne o resultado. Crie outra função que retorne o quadrado (x²) de um número. OBS: Use a função que multiplica dois números na função que gera o quadrado de um número
 - Crie uma função que receba o nome e sobrenome de uma pessoa e retorne a seguinte frase: `Ola "nome da pessoa" "sobrenome da pessoa", seja bem-vindo!`
+
+## Laço de repetição
+
+
+```js
+// Laço básico
+for(let i=0; i<5; i++){
+  console.log("Contando:", i)
+}
+```
+
+```js
+var nome = "Roberto Carlos"
+for(let i=0; i<nome.length; i++){
+  console.log(nome[i])
+}
+```
+
+```js
+var nome = "Roberto Carlos"
+for(let i=0; i<nome.length; i++){
+  if(nome[i]==="o"){
+    console.log("Yup")
+  }else{
+    console.log(nome[i])
+  }
+}
+```
+
+### Desafio
+
+- Crie um loop que conte de 0 a 100 e mostre apenas os números pares
+- Faça o mesmo a cima da número ímpares
+- Crie um array com valores inteiros aleatórios (exemplo [1,2,3,4]). Crie uma variável chamada "soma" e faça um loop que some o todos os valores dentro do array e atribua a variavel "soma".
