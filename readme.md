@@ -418,6 +418,9 @@ console.log(objetoLiteral);
 console.log(objetoJson);
 console.log(converteJsonParaObjetoLiteral);
 console.log(converteObjetoLiteralParaJson);
+
+
+// ! Fazer foreach e reducer
 ```
 
 ### Desafios
@@ -712,7 +715,6 @@ console.log(prof.nome);
 
 ## Laço de repetição
 
-
 ```js
 // Laço básico
 for(let i=0; i<5; i++){
@@ -738,8 +740,144 @@ for(let i=0; i<nome.length; i++){
 }
 ```
 
+```js
+const produto = {
+  id: 1,
+  nome: "Blusica estilosa",
+  preço: 2.99,
+  quantidade: 523,
+};
+
+for (let chave in produto) {
+  console.log(`Chave: ${chave} => valor: ${produto[chave]}`);
+}
+
+const pizzas = ["Mussarela", "Portuguesa", "Calabresa", "4 queijos"];
+
+for (let valor of pizzas) {
+  console.log(`Pizza sabor: ${valor}`);
+}
+```
+
+
 ### Desafio
 
 - Crie um loop que conte de 0 a 100 e mostre apenas os números pares
 - Faça o mesmo a cima da número ímpares
 - Crie um array com valores inteiros aleatórios (exemplo [1,2,3,4]). Crie uma variável chamada "soma" e faça um loop que some o todos os valores dentro do array e atribua a variavel "soma".
+
+## Destructuring (desestruturando)
+
+```js
+const frutas = ["Banana", "Pera", "Abacaxi", "Uva", "Melão"]
+
+const [banana, pera, ,uva] = frutas
+console.log(frutas)
+console.log(banana)
+console.log(pera)
+console.log(uva)
+
+const pessoa = {
+  nome: "Maria Júlia",
+  idade: 98,
+  altura: 1.57,
+  profissao: "Engenheira de bolos"
+}
+
+const {nome, profissao} = pessoa
+
+console.log(pessoa)
+console.log(nome)
+console.log(profissao)
+```
+
+## Spread operator (Operador de espalhamento)
+
+```js
+// Array
+const frutas = ["Banana", "Pera", "Abacaxi", "Uva", "Melão"]
+const doces = ["Bolo de chocolate", "Pudim", "Brigadeiro", "Mel"]
+
+const comidas = [...frutas, ...doces]
+
+console.log(frutas)
+console.log(doces)
+console.log(comidas)
+```
+
+
+```js
+// Objeto
+const pessoa = {
+  nome: "Maria Júlia",
+  idade: 98,
+  altura: 1.57,
+  profissao: "Engenheira de bolos"
+}
+const endereco = {
+  rua: "Floriano Peixoto",
+  numero: "201A",
+  bairro: "São Domingos",
+  cidade: "Mucuripe",
+  estado: "Acre"
+}
+const usuario = { ...pessoa, ...endereco}
+console.log(pessoa)
+console.log(endereco)
+console.log(usuario)
+
+// Mostrar exemplo para caso ocorra de existir duas chaves do mesmo nome
+```
+
+```js
+// Funções - rest parameter
+function exemplo(param1,param2, ...outrosParam){
+  console.log(param1)
+  console.log(param2)
+  console.log(outrosParam)
+}
+exemplo(1,2,3,4,5,6)
+
+const exemplo2 = (param1, param2, ...outrosParam) => {
+  console.log(param1);
+  console.log(param2);
+  console.log(outrosParam);
+};
+exemplo2(1, 2, 3, 4, 5, 6);
+
+function concatenaLetras(...letras){
+  return  letras.join('')
+}
+console.log(concatenaLetras('a','b','c','d','e'))
+
+function multiplicar(...numeros) {
+  return numeros.reduce((acumulador, valorAtual) => acumulador * valorAtual);
+}
+console.log(multiplicar(1,2,3,4,5));
+
+```
+
+## Date
+
+```js
+const data = new Date()
+console.log(data)
+// Retorna valor de 1 a 31
+console.log(data.getDate())
+// Retorna valor de 0 a 11
+// 0 = jan e 11 = dez
+console.log(data.getMonth())
+// Retorna valor de 0 a 6
+// 0 = dom e 6 = sábado
+console.log(data.getDay())
+// Retorna ano (entre 1000 e 9999)
+console.log(data.getFullYear())
+// Retorna hora
+console.log(data.getHours())
+// Retorna minutos
+console.log(data.getMinutes())
+// Retorna segundos
+console.log(data.getSeconds())
+// É possivel dizer o valor da data que vc irá criar no formato aaaa/mm/dd
+console.log(new Date(2020,10,30))
+```
